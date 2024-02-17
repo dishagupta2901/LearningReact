@@ -1,0 +1,20 @@
+React is manipulating Dom using JS. while rendering, it's converted to HTML which the browser understands.
+
+render -> replaces the things inside root instead appending.
+
+npm manages package
+
+in package.json version no has a prefix of ^ (caret) or ~ (tilda). Caret installs minor upgrades automatically whereas tilda installs major upgrades as well.
+
+Bundler used by React :  a tool that takes all your JavaScript code, along with any other assets like CSS or images, and combines them into a single file (or a few files) that can be served to the browser. Eg. Webpack, {others : parcel, rollup, etc)
+https://dev.to/underscorecode/javascript-bundlers-an-in-depth-comparative-is-webpack-still-the-best-bundler-in-2021-59jk
+
+transitive dependencies : dependencies of our packages dependencies. eg. parcel is our devdependency but it has its own dependencies.
+
+to start host in local host - npx parcel index.html
+to build it in localhost - npx parcel index.html -> delete main from package.json
+dist folder is packing the code for production ready. - known as production build - highly optimised and compressed.
+
+to make it browser compatibility, add browserslist in package.json -> 
+	browserslist: [last 2 chrome versions, last 2 edge versions] or [last 2 versions]
+https://browserslist.dev/?q=bGFzdCA1IHZlcnNpb25z

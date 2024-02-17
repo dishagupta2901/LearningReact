@@ -1,0 +1,27 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "\"Namaste React Learning\"",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dishagupta2901/LearningReact.git"
+  },
+  "author": "Disha Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dishagupta2901/LearningReact/issues"
+  },
+  "homepage": "https://github.com/dishagupta2901/LearningReact#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": ["last 2 versions"]
+    
+}
