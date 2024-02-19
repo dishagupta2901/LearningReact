@@ -18,3 +18,13 @@ dist folder is packing the code for production ready. - known as production buil
 to make it browser compatibility, add browserslist in package.json -> 
 	browserslist: [last 2 chrome versions, last 2 edge versions] or [last 2 versions]
 https://browserslist.dev/?q=bGFzdCA1IHZlcnNpb25z
+
+npm start and npm run start is same, but npm build will not work instead npm run build
+
+JSX - HTML or XML like syntax. It creates object similar to ReactElement.
+
+when React.createElement -> React Element : JS Object -> Render : HTML Object
+when JSX (Babel) -> React.createElement -> React Element : JS Object -> Render : HTML Object
+
+Parcel --> Babel : to transpiles JSX code before it reaches to browser 
+Babel is JS Compiler.

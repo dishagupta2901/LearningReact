@@ -13,7 +13,13 @@ const heading = React.createElement("div",
     }, "Hello React2!!")]
 ); // js object
 
+
+//JSX 
+
+const JSXHeading = <h1>Hello JSX!!</h1>
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const root1 = ReactDOM.createRoot(document.getElementById("root1"));
 
 console.log(root);
 root.render(heading);
+root1.render(JSXHeading);
