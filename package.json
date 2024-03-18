@@ -4,7 +4,8 @@
   "description": "\"Namaste React Learning\"",
   "scripts": {
     "test": "jest",
-    "start": "npx parcel index.html"
+    "start": "npx parcel index.html",
+    "build": "react-scripts build" 
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
   },
   "browserslist": [
     "last 2 versions"

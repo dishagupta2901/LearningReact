@@ -24,6 +24,21 @@
     width: 100px;
 }
 
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+}
+
+.shimmer-card {
+    width: 200px;
+    height: 200px;
+    background-color: lightgrey;
+    padding: 10px 10px;
+    margin: 0px 5px 10px 5px;
+    border: gray;
+}
+
 .res_container {
     display: flex;
     flex-wrap: wrap;
@@ -53,4 +68,5 @@
     padding: 10px 10px ;
     margin: 10px 10px;
     cursor: pointer;
+    display: flex;
 }
