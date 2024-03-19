@@ -2,8 +2,11 @@ import React from "react";
 import "../../index.css";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useCheckOnline from "../utils/useCheckOnline";
 // const Link = require("react-router-dom").Link;
 const HeaderComponent = () =>{
+    const isOnline = useCheckOnline();
+
     return(
         <div className="header">
             <div className="logo_container">
@@ -21,6 +24,7 @@ const HeaderComponent = () =>{
                         <Link to={"/about"}>About Us</Link>
                     </li>
                     <li>Cart</li>
+                    <li style={isOnline ? {color: "green"} : {color: "red"}}>Status : { isOnline ? "Online" : "Offline"} </li>
                 </ul>
             </div>
         </div>

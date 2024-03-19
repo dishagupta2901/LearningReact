@@ -1,22 +1,24 @@
 import {React, useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import Shimmer from "./Shimmer";
+import useAPICalls from "../utils/useAPICalls";
 
 const MenuComponent = () =>{
     const {id} = useParams();
-    const [resInfo, setResInfo] = useState();
+    const resInfo = useAPICalls("https://jsonplaceholder.typicode.com/albums/"+id);
+    // const [resInfo, setResInfo] = useState();
 
-    const fetchData = async() =>{
-        const data = await fetch("https://jsonplaceholder.typicode.com/albums/"+id);
-        const jsonData = await data.json();
-        console.log(data, jsonData, id);
+    // const fetchData = async() =>{
+    //     const data = await fetch("https://jsonplaceholder.typicode.com/albums/"+id);
+    //     const jsonData = await data.json();
+    //     console.log(data, jsonData, id);
         
-       setResInfo(jsonData);
-    }
+    //    setResInfo(jsonData);
+    // }
 
-    useEffect(() => {
-         fetchData();
-      },[]);
+    // useEffect(() => {
+    //      fetchData();
+    //   },[]);
 
       console.log(resInfo);
       
