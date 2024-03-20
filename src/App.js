@@ -8,6 +8,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import MenuComponent from "./components/MenuComponent";
 
 const AppLayout = () =>{
+    
     return(
         <div className="App">
             <HeaderComponent/>
@@ -35,7 +36,7 @@ const AppRouter = createBrowserRouter([
             },
             {
                 path : "/restaurant/:id",
-                element : <MenuComponent/>
+                element : <MenuComponent />
             }
         ]
     }

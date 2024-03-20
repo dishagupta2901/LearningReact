@@ -1,11 +1,16 @@
-import {React, useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useAPICalls from "../utils/useAPICalls";
+import AccordionComponent from "../reusableComponents/AccordianComponent";
 
 const MenuComponent = () =>{
     const {id} = useParams();
-    const resInfo = useAPICalls("https://jsonplaceholder.typicode.com/albums/"+id);
+    const resInfo : any = useAPICalls("https://jsonplaceholder.typicode.com/albums/"+id);
+    const albumListPhotos : any = useAPICalls("https://jsonplaceholder.typicode.com/photos?albumId="+id);
+    const [visibleIndex, setVisibleIndex] = useState(null);
+    console.log(albumListPhotos);
+    
     // const [resInfo, setResInfo] = useState();
 
     // const fetchData = async() =>{
@@ -22,7 +27,7 @@ const MenuComponent = () =>{
 
       console.log(resInfo);
       
-    if (resInfo === undefined )
+    if (resInfo === undefined && albumListPhotos === undefined)
         return <Shimmer/>
     
     return(
@@ -31,6 +36,23 @@ const MenuComponent = () =>{
             <h3 className="font-bold font-mono">Id: {resInfo?.id}</h3>
             <h1 className="font-semibold font-thin p-2 m-2">Title: {resInfo?.title}</h1>
             <h1 className="font-semibold font-thin p-2 m-2">UserId: {resInfo?.userId}</h1>
+        </div>
+        <div>
+            {albumListPhotos?.map((item:any, index)=>
+                 <AccordionComponent 
+                    key={item?.id}
+                    data = {item} 
+                    showItems = {index === visibleIndex ? true : false}
+                    currentIndex = {index}
+                    setVisibleIndex={() => {
+                        setVisibleIndex(index);
+                    }
+                    }
+                    setVisibleIndexNull = {()=>{setVisibleIndex(null);}}
+                    visibleIndex={visibleIndex}
+                />
+
+            )}
         </div>
         </>
     )
