@@ -17,4 +17,15 @@ const ResCardComponent = (props) =>{
     )
 }
 
+export const withLabel = (ResCard) =>{
+    return (props)=>{
+        return(
+            <div>
+                <label className="absolute bg-slate-700 text-slate-100 font-semibold font-mono text-sm opacity-80 mb-6 h-5"> Even </label>
+                <ResCard {...props}/>
+            </div>
+        )
+    }
+}
+
 export default ResCardComponent;
