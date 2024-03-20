@@ -27,10 +27,10 @@ const MenuComponent = () =>{
     
     return(
         <>
-        <div>
-            <h3>Id: {resInfo?.id}</h3>
-            <h1>Title: {resInfo?.title}</h1>
-            <li>UserId: {resInfo?.userId}</li>
+        <div className="m-4 p-4 shadow-sm bg-slate-400 rounded-md hover:bg-slate-50 max-w-auto min-w-fit">
+            <h3 className="font-bold font-mono">Id: {resInfo?.id}</h3>
+            <h1 className="font-semibold font-thin p-2 m-2">Title: {resInfo?.title}</h1>
+            <h1 className="font-semibold font-thin p-2 m-2">UserId: {resInfo?.userId}</h1>
         </div>
         </>
     )

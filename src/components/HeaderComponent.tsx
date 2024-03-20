@@ -8,23 +8,27 @@ const HeaderComponent = () =>{
     const isOnline = useCheckOnline();
 
     return(
-        <div className="header">
+        <div className="flex justify-between shadow-md to-blue-100">
             <div className="logo_container">
-                <img className="logo"
+                <img className="w-36"
                     src={LOGO_URL}
                     alt="my Logo!"
                 />
             </div>
             <div className="nav_items">
-                <ul>
-                    <li>
-                        <Link to={"/"}>Home</Link>
+                <ul className="flex p-2 m-2">
+                    <li className="p-2 m-2">
+                        <Link 
+                            className="block border border-gray-500 rounded-md py-2 px-4 text-center text-gray-700 hover:bg-gray-100 mt-2" 
+                            to={"/"}>Home</Link>
                     </li>
-                    <li>
-                        <Link to={"/about"}>About Us</Link>
+                    <li className="p-2 m-2">
+                        <Link 
+                            className="block border border-gray-500 rounded-md py-2 px-4 text-center text-gray-700 hover:bg-gray-100 mt-2" 
+                            to={"/about"}>About Us</Link>
                     </li>
-                    <li>Cart</li>
-                    <li style={isOnline ? {color: "green"} : {color: "red"}}>Status : { isOnline ? "Online" : "Offline"} </li>
+                    <li className="p-2 m-2">Cart</li>
+                    <li className="p-2 m-2" style={isOnline ? {color: "green"} : {color: "red"}}>Status : { isOnline ? "Online" : "Offline"} </li>
                 </ul>
             </div>
         </div>

@@ -30,25 +30,31 @@ const BodyComponent = () =>{
 
 
     return(
-        <div className="body">
-            <div className="filter_btn_container"> 
-                <button className="filter_btn" onClick={()=>{setTopRatedResList(data?.filter((res)=> (res?.userId) === 4))}}>
-                    Top Rated Albums
-                </button>
+        <div className="body p-2">
+            <div className="filter flex ">
+                <div className="filter "> 
+                    <button className="filter_btn border to-blue-100 m-2 p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
+                        onClick={()=>{
+                            setTopRatedResList(data?.filter((res)=> (res?.userId) === 4))}}>
+                        Top Rated Albums
+                    </button>
+                </div>
+                <div className="filter_btn_container"> 
+                    <input className="search m-2 p-2 border hover:bg-gray-100" 
+                        onChange={(e)=>{
+                            console.log(e.target?.value, e);
+                            setTopRatedResList(data?.filter((res)=> res?.title?.includes(e.target.value)));
+                        }}
+                        placeholder="Search"
+                    >
+                    </input>
+                </div>
             </div>
-            <div className="filter_btn_container"> 
-                <input className="search_bar" 
-                    onChange={(e)=>{
-                        console.log(e.target?.value, e);
-                        setTopRatedResList(data?.filter((res)=> res?.title?.includes(e.target.value)));
-                    }}
-                    placeholder="Search"
-                >
-                </input>
-            </div>
-            <div className="res_container">
+            
+            <div className="res_container flex flex-wrap justify-center">
                 { (topRatedResList === null || topRatedResList === undefined || topRatedResList.length === 0) ? (data?.map((res)=>
-                    <Link key= {res?.id} to ={"/restaurant/"+res?.id}>
+                    <Link 
+                        key= {res?.id} to ={"/restaurant/"+res?.id}>
                         <ResCardComponent 
                             key = {res?.id}
                             resData = {res}
