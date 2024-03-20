@@ -9,7 +9,7 @@ const MenuComponent = () =>{
     const resInfo : any = useAPICalls("https://jsonplaceholder.typicode.com/albums/"+id);
     const albumListPhotos : any = useAPICalls("https://jsonplaceholder.typicode.com/photos?albumId="+id);
     const [visibleIndex, setVisibleIndex] = useState(null);
-    console.log(albumListPhotos);
+    // console.log(albumListPhotos);
     
     // const [resInfo, setResInfo] = useState();
 
@@ -25,7 +25,7 @@ const MenuComponent = () =>{
     //      fetchData();
     //   },[]);
 
-      console.log(resInfo);
+    //   console.log(resInfo);
       
     if (resInfo === undefined && albumListPhotos === undefined)
         return <Shimmer/>

@@ -6,17 +6,17 @@ const useAPICalls = (url : any) =>{
     useEffect(()=>{
         
         fetchData();
-        console.log(data);
+        // console.log(data);
         
     }, []);
 
     const fetchData = async() =>{
-        console.log(url);
+        // console.log(url);
         
         const apiData = await fetch(url);
         const json = await apiData.json();
 
-        console.log("fetching data",apiData, json);
+        // console.log("fetching data",apiData, json);
         setData(json);
     }
     return data;

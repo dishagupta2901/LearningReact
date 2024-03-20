@@ -11,7 +11,7 @@ const useCheckOnline = () =>{
         window.addEventListener("offline", (event) => {
         setIsOnline(false);
         });
-        console.log(isOnline);
+        // console.log(isOnline);
         
         
     },[]);

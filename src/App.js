@@ -6,14 +6,18 @@ import BodyComponent from "./components/BodyComponent";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 // import About from "./components/About";
 import MenuComponent from "./components/MenuComponent";
+import AppContext from "./utils/AppContext";
 
 const AppLayout = () =>{
     
     return(
-        <div className="App">
-            <HeaderComponent/>
-            <Outlet/>
-        </div>
+        <AppContext.Provider value={{currentUser:"Disha"}}>
+            <div className="App">
+                <HeaderComponent/>
+                <Outlet/>
+            </div>
+        </AppContext.Provider>
+        
     )
 }
 
